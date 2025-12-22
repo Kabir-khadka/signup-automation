@@ -1,0 +1,412 @@
+{
+  "stats": {
+    "suites": 7,
+    "tests": 8,
+    "passes": 8,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-12-22T15:56:10.989Z",
+    "end": "2025-12-22T15:57:36.094Z",
+    "duration": 85105,
+    "testsRegistered": 8,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bf3e507a-0385-4b22-aa29-2ee55079ca57",
+      "title": "",
+      "fullFile": "C:\\Users\\kabir\\Documents\\QA_Portolio\\QA_Task\\tests\\completeSignup.mocha.test.js",
+      "file": "\\tests\\completeSignup.mocha.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c1f0831c-91ae-408e-b190-21b4c24faff9",
+          "title": "Complete Signup Automation Test Suite",
+          "fullFile": "C:\\Users\\kabir\\Documents\\QA_Portolio\\QA_Task\\tests\\completeSignup.mocha.test.js",
+          "file": "\\tests\\completeSignup.mocha.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Complete Signup Automation Test Suite\"",
+              "fullTitle": "Complete Signup Automation Test Suite \"before all\" hook in \"Complete Signup Automation Test Suite\"",
+              "timedOut": false,
+              "duration": 873,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('🚀 Starting automation setup...');\nconsole.log('📋 Configuration loaded');\nconsole.log('📧 Test Email:', config.userCredentials.email);\nconsole.log('📱 Test Phone:', config.userCredentials.phoneNumber);\n\nconst options = new chrome.Options();\noptions.addArguments('--start-maximized');\noptions.addArguments('--disable-blink-features=AutomationControlled');\n\n// Use ChromeDriver from drivers folder\nconst service = new chrome.ServiceBuilder(config.chromedriverPath);\n\nconsole.log('🌐 Initializing Chrome browser...');\ndriver = await new Builder()\n  .forBrowser('chrome')\n  .setChromeService(service)\n  .setChromeOptions(options)\n  .build();\n\nconsole.log('✅ Browser initialized successfully\\n');",
+              "err": {},
+              "uuid": "e0aa7f4d-d761-4dca-8f71-fc03e8331fec",
+              "parentUUID": "c1f0831c-91ae-408e-b190-21b4c24faff9",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Complete Signup Automation Test Suite\"",
+              "fullTitle": "Complete Signup Automation Test Suite \"after all\" hook in \"Complete Signup Automation Test Suite\"",
+              "timedOut": false,
+              "duration": 3260,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (driver) {\n  console.log('\\n🔚 Closing browser...');\n  await driver.sleep(3000); // Keep open briefly to see final result\n  await driver.quit();\n  console.log('✅ Browser closed');\n}",
+              "err": {},
+              "uuid": "991d6fb5-e581-434b-8043-f581f8a834b7",
+              "parentUUID": "c1f0831c-91ae-408e-b190-21b4c24faff9",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook in \"Complete Signup Automation Test Suite\"",
+              "fullTitle": "Complete Signup Automation Test Suite \"after each\" hook in \"Complete Signup Automation Test Suite\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Take screenshot on failure\nif (this.currentTest.state === 'failed' && driver) {\n  try {\n    const screenshotsDir = path.join(__dirname, '../screenshots');\n    if (!fs.existsSync(screenshotsDir)) {\n      fs.mkdirSync(screenshotsDir, { recursive: true });\n    }\n    \n    const screenshot = await driver.takeScreenshot();\n    const testName = this.currentTest.title.replace(/[^a-z0-9]/gi, '_');\n    const screenshotPath = path.join(screenshotsDir, `${testName}_${Date.now()}.png`);\n    fs.writeFileSync(screenshotPath, screenshot, 'base64');\n    console.log(`📸 Screenshot saved: ${screenshotPath}`);\n    \n    const currentUrl = await driver.getCurrentUrl();\n    console.log('🔗 Current URL:', currentUrl);\n  } catch (screenshotError) {\n    console.error('Could not take screenshot:', screenshotError.message);\n  }\n}",
+              "err": {},
+              "uuid": "e7cf5708-799f-414e-b2bf-a703b2985df4",
+              "parentUUID": "c1f0831c-91ae-408e-b190-21b4c24faff9",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "49fea51d-10b7-45f4-92c2-b431fce32612",
+              "title": "Phase 0: Navigation Flow",
+              "fullFile": "C:\\Users\\kabir\\Documents\\QA_Portolio\\QA_Task\\tests\\completeSignup.mocha.test.js",
+              "file": "\\tests\\completeSignup.mocha.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Phase 0.1: Should navigate to homepage and click Login",
+                  "fullTitle": "Complete Signup Automation Test Suite Phase 0: Navigation Flow Phase 0.1: Should navigate to homepage and click Login",
+                  "timedOut": false,
+                  "duration": 7824,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "console.log('========== PHASE 0.1: HOMEPAGE NAVIGATION ==========');\nconst homePage = new HomePage(driver, config);\nawait homePage.navigateAndClickLogin();\n\nconst currentUrl = await driver.getCurrentUrl();\nassert(currentUrl.includes('/login'), 'Should navigate to login page');",
+                  "err": {},
+                  "uuid": "d5905311-fc13-435e-a606-44f47d762096",
+                  "parentUUID": "49fea51d-10b7-45f4-92c2-b431fce32612",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Phase 0.2: Should click Sign Up on Login page",
+                  "fullTitle": "Complete Signup Automation Test Suite Phase 0: Navigation Flow Phase 0.2: Should click Sign Up on Login page",
+                  "timedOut": false,
+                  "duration": 5762,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "console.log('\\n========== PHASE 0.2: LOGIN PAGE ==========');\nconst loginPage = new LoginPage(driver, config);\nawait loginPage.clickSignUp();\n\nconst currentUrl = await driver.getCurrentUrl();\nassert(currentUrl.includes('/register'), 'Should navigate to register page');",
+                  "err": {},
+                  "uuid": "d2aa9627-7658-4da3-8c53-57915e6ff408",
+                  "parentUUID": "49fea51d-10b7-45f4-92c2-b431fce32612",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Phase 0.3: Should accept Terms and Conditions",
+                  "fullTitle": "Complete Signup Automation Test Suite Phase 0: Navigation Flow Phase 0.3: Should accept Terms and Conditions",
+                  "timedOut": false,
+                  "duration": 3199,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "console.log('\\n========== PHASE 0.3: TERMS AGREEMENT ==========');\nconst termsPage = new TermsPage(driver, config);\nawait termsPage.acceptTermsAndContinue();\n\n// Verify we moved past the terms page\nconst currentUrl = await driver.getCurrentUrl();\nconsole.log('✓ Current URL after terms:', currentUrl);",
+                  "err": {},
+                  "uuid": "7db51e47-93ca-4962-8fe6-cc044ecd11b2",
+                  "parentUUID": "49fea51d-10b7-45f4-92c2-b431fce32612",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d5905311-fc13-435e-a606-44f47d762096",
+                "d2aa9627-7658-4da3-8c53-57915e6ff408",
+                "7db51e47-93ca-4962-8fe6-cc044ecd11b2"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 16785,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 600000
+            },
+            {
+              "uuid": "2c4b89f6-e118-4973-ae9b-de0c835be785",
+              "title": "Phase 1: Signup Form Submission",
+              "fullFile": "C:\\Users\\kabir\\Documents\\QA_Portolio\\QA_Task\\tests\\completeSignup.mocha.test.js",
+              "file": "\\tests\\completeSignup.mocha.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Phase 1: Should fill and submit signup form",
+                  "fullTitle": "Complete Signup Automation Test Suite Phase 1: Signup Form Submission Phase 1: Should fill and submit signup form",
+                  "timedOut": false,
+                  "duration": 9028,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "console.log('\\n========== PHASE 1: SIGNUP FORM ==========');\nconst signupPage = new SignupPage(driver, config);\nawait signupPage.fillAndSubmit();\n\nconst currentUrl = await driver.getCurrentUrl();\nconsole.log('✓ Current URL after signup:', currentUrl);",
+                  "err": {},
+                  "uuid": "e5ea0996-48ed-4714-abd0-7a3952b2a88b",
+                  "parentUUID": "2c4b89f6-e118-4973-ae9b-de0c835be785",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "e5ea0996-48ed-4714-abd0-7a3952b2a88b"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 9028,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 600000
+            },
+            {
+              "uuid": "abcf335c-a354-4c8a-aa00-b249515e1257",
+              "title": "Phase 2: OTP Verification",
+              "fullFile": "C:\\Users\\kabir\\Documents\\QA_Portolio\\QA_Task\\tests\\completeSignup.mocha.test.js",
+              "file": "\\tests\\completeSignup.mocha.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Phase 2: Should verify OTP",
+                  "fullTitle": "Complete Signup Automation Test Suite Phase 2: OTP Verification Phase 2: Should verify OTP",
+                  "timedOut": false,
+                  "duration": 23852,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "console.log('\\n========== PHASE 2: OTP VERIFICATION ==========');\nconst otpPage = new OTPPage(driver, config);\nawait otpPage.verifyOTP();\n\nconst currentUrl = await driver.getCurrentUrl();\nconsole.log('✓ Current URL after OTP:', currentUrl);",
+                  "err": {},
+                  "uuid": "0e98e737-cae8-4ea6-85d3-77d2520dcac8",
+                  "parentUUID": "abcf335c-a354-4c8a-aa00-b249515e1257",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "0e98e737-cae8-4ea6-85d3-77d2520dcac8"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 23852,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 600000
+            },
+            {
+              "uuid": "4a54616a-13d1-4bea-9e2b-a0c9917d81de",
+              "title": "Phase 3: Agency Details",
+              "fullFile": "C:\\Users\\kabir\\Documents\\QA_Portolio\\QA_Task\\tests\\completeSignup.mocha.test.js",
+              "file": "\\tests\\completeSignup.mocha.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Phase 3: Should fill and submit agency details",
+                  "fullTitle": "Complete Signup Automation Test Suite Phase 3: Agency Details Phase 3: Should fill and submit agency details",
+                  "timedOut": false,
+                  "duration": 8984,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "console.log('\\n========== PHASE 3: AGENCY DETAILS ==========');\nconst agencyDetailsPage = new AgencyDetailsPage(driver, config);\nconst currentUrl = await agencyDetailsPage.fillAndSubmit();\n\nconsole.log('✓ Current URL after agency details:', currentUrl);",
+                  "err": {},
+                  "uuid": "82625cb7-8b1d-498a-92c3-9a75498407f9",
+                  "parentUUID": "4a54616a-13d1-4bea-9e2b-a0c9917d81de",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "82625cb7-8b1d-498a-92c3-9a75498407f9"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 8984,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 600000
+            },
+            {
+              "uuid": "7e0ef702-322d-46b2-b23c-a129688529d7",
+              "title": "Phase 4: Professional Experience",
+              "fullFile": "C:\\Users\\kabir\\Documents\\QA_Portolio\\QA_Task\\tests\\completeSignup.mocha.test.js",
+              "file": "\\tests\\completeSignup.mocha.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Phase 4: Should fill and submit professional experience",
+                  "fullTitle": "Complete Signup Automation Test Suite Phase 4: Professional Experience Phase 4: Should fill and submit professional experience",
+                  "timedOut": false,
+                  "duration": 7182,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "console.log('\\n========== PHASE 4: PROFESSIONAL EXPERIENCE ==========');\nconst professionalExpPage = new ProfessionalExpPage(driver, config);\nconst currentUrl = await professionalExpPage.fillAndSubmit();\n\nconsole.log('✓ Current URL after professional experience:', currentUrl);",
+                  "err": {},
+                  "uuid": "bb9d336f-305e-4363-8500-3dd42ee3e519",
+                  "parentUUID": "7e0ef702-322d-46b2-b23c-a129688529d7",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "bb9d336f-305e-4363-8500-3dd42ee3e519"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 7182,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 600000
+            },
+            {
+              "uuid": "3819a2ac-c391-4c7d-8f70-7485cb8394e1",
+              "title": "Phase 5: Verification",
+              "fullFile": "C:\\Users\\kabir\\Documents\\QA_Portolio\\QA_Task\\tests\\completeSignup.mocha.test.js",
+              "file": "\\tests\\completeSignup.mocha.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Phase 5: Should complete verification process",
+                  "fullTitle": "Complete Signup Automation Test Suite Phase 5: Verification Phase 5: Should complete verification process",
+                  "timedOut": false,
+                  "duration": 15121,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "console.log('\\n========== PHASE 5: VERIFICATION ==========');\nconst verificationPage = new VerificationPage(driver, config);\nconst currentUrl = await verificationPage.fillAndSubmit();\n\nconsole.log('\\n========================================');\nconsole.log('✅ COMPLETE AUTOMATION SUCCESSFUL!');\nconsole.log('========================================');\nconsole.log('Final URL:', currentUrl);\n\n// Keep browser open briefly to see the result\nawait driver.sleep(5000);",
+                  "err": {},
+                  "uuid": "bac46819-e554-49e3-a001-d571983c6b8a",
+                  "parentUUID": "3819a2ac-c391-4c7d-8f70-7485cb8394e1",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "bac46819-e554-49e3-a001-d571983c6b8a"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 15121,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 600000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 600000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.5"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "index",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "test-results",
+        "reportFilename": "index",
+        "reportTitle": "'Signup"
+      },
+      "version": "6.3.2"
+    }
+  }
+}

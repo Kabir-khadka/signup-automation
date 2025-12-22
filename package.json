@@ -1,0 +1,24 @@
+{
+  "name": "vrit-qa-automation",
+  "version": "1.0.0",
+  "main": "tests/completeSignup.test.js",
+  "scripts": {
+    "test": "node tests/completeSignup.test.js",
+    "test:mocha": "mocha tests/*.mocha.test.js --reporter mochawesome --reporter-options reportDir=test-results,reportFilename=index,reportTitle='Signup Automation Report',reportPageTitle='Test Results'",
+    "test:all": "npm run test:mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "imap-simple": "^1.6.3",
+    "mailparser": "^2.3.0",
+    "selenium-webdriver": "^4.36.0"
+  },
+  "devDependencies": {
+    "mocha": "^11.7.5",
+    "mochawesome": "^7.1.4",
+    "mochawesome-report-generator": "^6.3.2"
+  }
+}
