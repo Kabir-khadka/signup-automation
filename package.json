@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "tests/completeSignup.test.js",
   "scripts": {
+    "start": "node tests/completeSignup.test.js",
     "test": "node tests/completeSignup.test.js",
     "test:mocha": "mocha tests/*.mocha.test.js --reporter mochawesome --reporter-options reportDir=test-results,reportFilename=index,reportTitle='Signup Automation Report',reportPageTitle='Test Results'",
     "test:all": "npm run test:mocha"

@@ -29,13 +29,9 @@ const VerificationPage = require('../pages/VerificationPage');
     options.addArguments('--start-maximized');
     options.addArguments('--disable-blink-features=AutomationControlled');
     
-    // Use ChromeDriver from drivers folder
-    const service = new chrome.ServiceBuilder(config.chromedriverPath);
-    
     console.log('🌐 Initializing Chrome browser...');
     driver = await new Builder()
       .forBrowser('chrome')
-      .setChromeService(service)
       .setChromeOptions(options)
       .build();
     
