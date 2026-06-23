@@ -9,8 +9,8 @@
 |-------|---------|
 | **Project Name** | Authorized Partner Signup Automation |
 | **Application URL** | https://authorized-partner.vercel.app/ |
-| **Test Date** | 11/22/2025 |
-| **Test Environment** | Windows 11 / Chrome Browser |
+| **Test Date** | 06/23/2026 |
+| **Test Environment** | Windows 11 / Chrome 149 |
 | **Test Framework** | Selenium WebDriver + Mocha |
 | **Test Status** | ✅ PASSED |
 
@@ -108,13 +108,13 @@ To automate and validate the complete user signup flow for the Authorized Partne
 - **Language:** JavaScript (Node.js)
 - **Test Framework:** Mocha
 - **Automation Tool:** Selenium WebDriver
-- **Browser:** Chrome (via ChromeDriver)
+- **Browser:** Chrome (via Selenium Manager — auto-managed, no manual driver install needed)
 - **Reporting:** Mochawesome
 
 #### **Project Structure**
 ```
 project/
-├── pages/                    # Page Object classes
+├── pages/                    # Page Object Model classes
 │   ├── HomePage.js
 │   ├── LoginPage.js
 │   ├── TermsPage.js
@@ -123,14 +123,18 @@ project/
 │   ├── AgencyDetailsPage.js
 │   ├── ProfessionalExpPage.js
 │   └── VerificationPage.js
-├── tests/                    # Test files
+├── tests/                    # Automation test scripts
+│   ├── completeSignup.test.js
 │   └── completeSignup.mocha.test.js
-├── config/                   # Configuration
+├── config/                   # Test data & configuration
 │   └── testData.js
-├── drivers/                  # Browser drivers
-│   └── chromedriver.exe
-├── screenshots/              # Error screenshots
-├── test-results/            # HTML reports
+├── utils/                    # Helper utilities (OTP retrieval)
+│   └── emailHelper.js
+├── assets/                   # Test data files (document upload)
+├── test-plans/               # Manual test plans, scenarios, and cases
+├── test-reports/             # HTML & PDF test execution reports
+├── bug-reports/              # Bug report spreadsheet & failure screenshots
+├── video/                    # Demo video of automation run
 └── package.json
 ```
 
@@ -183,11 +187,11 @@ project/
 | Component | Version/Details |
 |-----------|----------------|
 | Operating System | Windows 11 |
-| Node.js | v18.x.x |
-| Chrome Browser | Latest Stable |
-| ChromeDriver | 131.x.x |
-| Selenium WebDriver | 4.x.x |
-| Mocha | 10.x.x |
+| Node.js | v18+ (LTS) |
+| Chrome Browser | 149.x |
+| ChromeDriver | Auto-managed by Selenium Manager |
+| Selenium WebDriver | 4.39.0 |
+| Mocha | 11.7.5 |
 
 ---
 
@@ -195,16 +199,17 @@ project/
 
 1. Clone the repository
 2. Install dependencies: `npm install`
-3. Update test data in `config/testData.js`
-4. Run tests: `npm run test:mocha`
-5. View HTML report: `test-results/index.html`
+3. Run the main automation: `npm start`
+4. *(Optional)* Run with Mocha reporter: `npm run test:mocha`
+5. View HTML report: `test-reports/index.html`
 
 ---
 
 ### 📸 **Evidence**
 
-- **HTML Report:** Available in `test-results/index.html`
-- **Screenshots:** Captured automatically on failure in `screenshots/` directory
+- **HTML Report:** Available in `test-reports/index.html`
+- **PDF Report:** Available in `test-reports/TEST_REPORT.pdf`
+- **Screenshots:** Captured automatically on failure in `bug-reports/` directory
 - **Console Logs:** Detailed step-by-step execution logs in terminal
 
 ---
@@ -212,7 +217,7 @@ project/
 ### 👨‍💻 **Prepared By**
 
 **QA Engineer:** Kabir Khadka 
-**Date:** 12/22/2025  
+**Date:** 06/23/2026  
 
 
 ---
