@@ -55,7 +55,7 @@ describe('Complete Signup Automation Test Suite', function() {
     // Take screenshot on failure
     if (this.currentTest.state === 'failed' && driver) {
       try {
-        const screenshotsDir = path.join(__dirname, '../screenshots');
+        const screenshotsDir = path.join(__dirname, '../bug-reports');
         if (!fs.existsSync(screenshotsDir)) {
           fs.mkdirSync(screenshotsDir, { recursive: true });
         }

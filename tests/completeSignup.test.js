@@ -95,7 +95,7 @@ const VerificationPage = require('../pages/VerificationPage');
     
     if (driver) {
       try {
-        const screenshotsDir = path.join(__dirname, '../screenshots');
+        const screenshotsDir = path.join(__dirname, '../bug-reports');
         if (!fs.existsSync(screenshotsDir)) {
           fs.mkdirSync(screenshotsDir, { recursive: true });
         }
